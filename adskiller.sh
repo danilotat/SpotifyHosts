@@ -1,19 +1,5 @@
 #! /bin/bash
 
-# Copyright (C) 2018 Tatoni Danilo
-
-# Spotify_Linux_AdsKiller is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# Spotify_Linux_AdsKiller is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 if (( $EUID != 0 )); then
 	echo ""
@@ -23,6 +9,9 @@ if (( $EUID != 0 )); then
 	exit 1
 fi 
 
+echo "" >> /etc/hosts ;
+echo "# This part is added to block Spotify ads" >> /etc/hosts ;
+echo "" >> /etc/hosts ;
 echo "127.0.0.1 media-match.com" >> /etc/hosts ;
 echo "127.0.0.1 adclick.g.doublecklick.net" >> /etc/hosts ;
 echo "127.0.0.1 www.googleadservices.com" >> /etc/hosts ;
@@ -37,7 +26,6 @@ echo "127.0.0.1 omaze.com" >> /etc/hosts ;
 echo "127.0.0.1 bounceexchange.com" >> /etc/hosts ;
 echo "0.0.0.0 pubads.g.doubleclick.net" >> /etc/hosts ;
 echo "0.0.0.0 securepubads.g.doubleclick.net" >> /etc/hosts ;
-
 echo "127.0.0.1 media-match.com" >> /etc/hosts ; 
 echo "127.0.0.1 adclick.g.doublecklick.net" >> /etc/hosts ; 
 echo "127.0.0.1 googleads.g.doubleclick.net" >> /etc/hosts ; 
@@ -46,7 +34,6 @@ echo "127.0.0.1 pagead2.googlesyndication.com" >> /etc/hosts ;
 echo "127.0.0.1 desktop.spotify.com" >> /etc/hosts ; 
 echo "127.0.0.1 pubads.g.doubleclick.net" >> /etc/hosts ; 
 echo "127.0.0.1 audio2.spotify.com" >> /etc/hosts ;
-
 echo "127.0.0.1 pagead46.l.doubleclick.net" >> /etc/hosts ;
 echo "127.0.0.1 pagead.l.doubleclick.net" >> /etc/hosts ;
 echo "127.0.0.1 googlehosted.l.googleusercontent.com" >> /etc/hosts ;
@@ -64,7 +51,6 @@ echo "127.0.0.1 anycast.pixel.adsafeprotected.com" >> /etc/hosts ;
 echo "127.0.0.1 ads-west-colo.adsymptotic.com" >> /etc/hosts ;
 echo "127.0.0.1 geo3.ggpht.com" >> /etc/hosts ;
 echo "127.0.0.1 showads33000.pubmatic.com" >> /etc/hosts ; 
-
 echo "127.0.0.1 media-match.com" >> /etc/hosts ;
 echo "127.0.0.1 adclick.g.doublecklick.net" >> /etc/hosts ;
 echo "127.0.0.1 www.googleadservices.com" >> /etc/hosts ;
